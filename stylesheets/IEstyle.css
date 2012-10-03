@@ -1,0 +1,283 @@
+
+        
+           html
+            {
+             height: 100%;
+             width: 100%;
+            }
+            
+           @font-face {
+	      font-family: MyCustomFont;
+	      src: url("../hacen.eot") /* EOT file for IE */
+		      }
+		      
+            body
+            {
+                background:url('../Images/background.png') repeat-x;
+                font-family:MyCustomFont;
+                color:#db1b58;
+                font-size:18px;
+            }
+            div#wrapper
+            {
+            width: 974px;
+              height: 540px;
+              margin-right:auto;
+              margin-left:auto;
+              
+              
+            }
+            img{
+               border:none;
+            }
+            a
+            {
+               color:#db1b58;
+	       text-decoration:none;
+            }
+            
+             div#firstheader
+	  {
+	    width: 974px;
+	    height: 29px;
+	    
+	  }
+	  
+	  div#firstheader ul
+	  {
+	    list-style-type:none;
+	    margin-left:-35px;
+	  }
+	  
+	  div#firstheader ul li 
+	  {
+	    float:left;
+	    
+	  }
+	  
+	   div#firstheader ul li.b
+	  {
+	    background:url('../Images/search_bar.png');
+	    width:159px;
+	    height:27px;
+	    
+	  }
+	  
+	   div#firstheader ul li.c
+	  {
+	    margin-left:20px;
+	    
+	  }
+            div#header
+	  {
+	    background:url('../Images/Navigation.png');
+	    width: 974px;
+	    height: 103px;
+            margin-top:-18px;
+	   
+	  }
+           div#header ul
+	  {
+	    list-style-type:none;
+	    padding-top:47px;
+	    margin-left:50px;
+	    font-size:18px;
+	    
+	  }
+	  
+	    div#header ul li
+	  {
+	    list-style-type:none;
+	    font-size:18px;
+	    text-shadow:1px 1px #c4c4c4;
+	    float:left;
+	    
+	    
+	  }
+	  
+            
+            div#header ul li.b
+	  {
+	    margin-left:30px;
+	  }
+	  div#header ul li.c
+	  {
+	    margin-left:35px;
+	  }
+	  div#header ul li.d
+	  {
+	   margin-left:-10px;
+	    
+	  }
+	  div#header ul li.e
+	  {
+	    margin-left:-47px;
+	    
+	  }
+	  div#header ul li.f
+	  {
+	    margin-left:18px;
+	  }
+	
+	   div#header ul li img
+	  {
+	    
+	    margin-left:5px;
+	    
+	  }
+	
+	
+	  
+	 div#sliders
+	  {
+	    background:url('../Images/slider_container.png');
+	    width:864px;
+	    height:349px;
+	    margin-left:auto;
+	    margin-right:auto;
+	    margin-top:20px;
+	  }
+	  
+	  div#footer
+	  {
+	    width: 974px;
+	    margin-left:auto;
+	    margin-right:auto;
+	    margin-top:35px;
+	  }
+	  
+	  div#footer ul
+	  {
+	    list-style-type:none;
+	  }
+	  
+	  div#footer ul li
+	  {
+	    float:left;
+	  }
+	  
+	  div#footer ul li.a
+	  {
+	    background:url('../Images/map.png');
+	    width:253px;
+	    height:298px;
+	  }
+	  
+	  div#footer ul li.b
+	  {
+	    background:url('../Images/calender.png');
+	    width:253px;
+	    height:298px;
+	    margin-left:80px;
+	  }
+	  
+	  div#footer ul li.c
+	  {
+	    background:url('../Images/latest.png');
+	    width:253px;
+	    height:298px;
+	    margin-left:80px;
+	  }
+	  
+	div#foot2
+	{
+	   width: 974px;
+	   height:80px;
+	   margin-left:auto;
+           clear:both;
+	   margin-right:auto;
+	   
+	}
+	
+            
+      	
+/* remove the list style */
+	#nav {
+		
+		list-style:none;
+                
+	}	
+	
+		/* make the LI display inline */
+		/* it's position relative so that position absolute */
+		/* can be used in submenu */
+		#nav li {
+			float:left; 
+			display:block; 
+			width:95px; 
+			
+			position:relative;
+			z-index:9999; 
+			margin:0 1px;
+			border-radius:8px;
+			
+                        
+		}
+		
+		/* this is the parent menu */
+		#nav li a {
+			display:block; 
+			color:#db1b58;
+			height:25px; 
+			text-decoration:none; 
+			text-align:center; 
+			
+		}
+
+		
+		
+		/* submenu, it's hidden by default */
+		#nav ul {
+			position:absolute; 
+			left:-47px; 
+			display:none; 
+			padding:0; 
+			list-style:none;
+                        
+                        margin-top:-38px;
+                        
+		}
+		
+		#nav ul li {
+			width:95px; 
+			float:left; 
+			border-top:1px solid #fff;
+                        background:#f4f2f2;
+			
+		}
+		
+		/* display block will make the link fill the whole area of LI */
+		#nav ul a {
+			display:block;  
+			height:28px;
+			padding: 5px 5px;
+			
+		}
+		
+		
+		/* fix ie6 small issue */
+		/* we should always avoid using hack like this */
+		/* should put it into separate file : ) */
+		*html #nav ul {
+			margin:0 0 0 -2px;
+		}
+
+      
+      div#second
+{
+  float:right;
+  margin-right:15px;
+}
+
+
+div#first ul
+{
+  list-style-type:none;
+  margin-left:-30px;
+}
+div#first ul li
+{
+  float:left;
+  margin-left:30px;
+}
+      

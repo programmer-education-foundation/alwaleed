@@ -1,0 +1,280 @@
+
+        
+           html
+            {
+             height: 100%;
+             width: 100%;
+            }
+            
+           @font-face {
+	      font-family: MyCustomFont;
+	      src: url("../hacen.eot") /* EOT file for IE */
+		      }
+		      
+            body
+            {
+                background:url('../Images/bg.png') repeat-x;
+                font-family:MyCustomFont;
+                color:#95e8ff;
+                
+            }
+               
+	    
+            div#wrapper
+            {
+              width: 990px;
+              min-height: 580px;
+	      height:auto;
+              margin-right:auto;
+              margin-left:auto;
+            }
+	    
+	    div#header
+	    {
+	      background:url('../Images/header.png');
+	      width: 990px;
+	      height:98px;
+	       
+	    }
+	    
+	    a
+	     {
+	       color:#95e8ff;
+	       text-decoration:none;
+	      }
+	    
+	    
+	    a:hover
+	    {
+	       color:white;
+	       text-decoration:none;
+	       
+	    }
+	    
+	    div#header ul
+	    {
+	      list-style-type:none;
+	      padding-top:30px;
+	      margin-left:130px;
+	     
+	    }
+	    
+	    div#header ul li.a
+	    {
+	      float:left;
+	      font-size:20px;
+	     
+	      
+	    }
+	    div#header ul li.b
+	    {
+	      float:left;
+	      font-size:20px;
+	      padding-left:40px;
+	      
+	   
+	    }
+	    div#header ul li.c
+	    {
+	       float:left;
+	       font-size:20px;
+	       padding-left:40px;
+	       
+	       
+	       
+	    }
+	    div#header ul li.d
+	    {
+	       float:left;
+	       font-size:20px;
+	       padding-left:40px;
+	   
+	    }
+	    div#header ul li.e
+	    {
+	       float:left;
+	       font-size:20px;
+	       padding-left:40px;
+	       
+	       
+	    }
+	    div#header ul li.f
+	    {
+	       float:left;
+	       font-size:20px;
+	       padding-left:40px;
+	      
+	    }
+	    div#header ul li.g
+	    {
+	       float:left;
+	       font-size:20px;
+	       padding-left:40px;
+	      
+	      
+	    }
+	    
+	    div#page
+	    {
+	      border: dashed 1px;
+	      width: 990px;
+              min-height: 470px;
+	      height:auto;
+	      margin-top:20px;
+             
+	    }
+	    
+	 div#foot2
+	 {
+	   width: 990px;
+	   height:70px;
+	   margin-left:auto;
+	   clear:both;
+	   margin-right:auto;
+	 }
+div#second
+{
+  float:right;
+  margin-right:35px;
+}
+
+
+div#first ul
+{
+  list-style-type:none;
+  margin-left:-50px;
+
+}
+div#first ul li
+{
+  float:left;
+  margin-left:35px;
+}
+
+
+
+
+#sddm
+{	margin: 0;
+	padding: 0;
+	z-index: 30}
+
+#sddm li
+{	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	}
+
+#sddm li a
+{	display: block;
+	margin: 0 1px 0 0;
+	padding: 4px 10px;
+	width: 60px;
+	text-align: center;
+	text-decoration: none}
+
+
+#sddm div
+{	position: absolute;
+	visibility: hidden;
+	margin: 0;
+	padding: 0;
+	background: #EAEBD8;
+	border: 1px solid #5970B2}
+
+	#sddm div a
+	{	position: relative;
+		display: block;
+		margin: 0;
+		padding: 5px 10px;
+		width: auto;
+		white-space: nowrap;
+		text-align: center;
+		text-decoration: none;
+		background: #EAEBD8;
+		color: #2875DE;
+		width:60px;
+		font-size: 18pX}
+		
+		
+
+	#sddm div a:hover
+	{	background: #95e8ff;
+		color: #FFF}
+	    
+            
+img{
+   border:none;
+}
+
+	
+			div#sliderupload
+		{
+		  float:right;
+		  border:1px dashed #95e8ff;
+		  width:300px;
+		  height:120px;
+		  margin-right:350px;
+		  margin-top:20px;
+		  
+		  
+		}
+		
+		div#sliderupload span
+		{
+		  float:right;
+		}
+		
+		div#sliderupload form
+		{
+		  margin-top:40px;
+		  margin-left:35px;
+		}
+		
+                
+                		div#sliderupload2
+		{
+		  float:right;
+		  border:1px dashed #95e8ff;
+		  width:300px;
+		  height:120px;
+		  margin-right:350px;
+		  margin-top:20px;
+		  
+		  
+		}
+		
+		div#sliderupload2 span
+		{
+		  float:right;
+		}
+		
+		div#sliderupload2 form
+		{
+		  margin-top:40px;
+		  margin-left:35px;
+		}
+		
+			div#sliderupload3
+		{
+		  float:right;
+		  border:1px dashed #95e8ff;
+		  width:300px;
+		  height:120px;
+		  margin-right:350px;
+		  margin-top:20px;
+		  
+		  
+		}
+		
+		div#sliderupload3 span
+		{
+		  float:right;
+		}
+		
+		div#sliderupload3 form
+		{
+		  margin-top:40px;
+		  margin-left:35px;
+		}
