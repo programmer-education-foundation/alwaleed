@@ -124,23 +124,27 @@ if(isset($_POST['title'])&& $_POST['title']!="" && isset($_POST['article']) && $
 {
     if($_POST['type']=="tmlek")
     {
-	$mysqli->query("INSERT INTO shops1 (title,content) VALUES ('$_POST[title]','$_POST[article]')");
+        $statement = $mysqli->prepare("INSERT INTO shops1 (title,content) VALUES (?, ?)");
+        $statement->bind_param('ss', $_POST['title'], $_POST['article']);
+        $statement->execute();
         header("location:editshops.php");
 
     }
     
     if($_POST['type']=="new")
     {
-	$mysqli->query("INSERT INTO  shops2 (title,content) VALUES ('$_POST[title]','$_POST[article]')");
+        $statement = $mysqli->prepare("INSERT INTO shops2 (title,content) VALUES (?, ?)");
+        $statement->bind_param('ss', $_POST['title'], $_POST['article']);
+        $statement->execute();
         header("location:editshops.php");
-	
     }
     
     if($_POST['type']=="old")
     {
-	$mysqli->query("INSERT INTO  shops3 (title,content) VALUES ('$_POST[title]','$_POST[article]')");
+        $statement = $mysqli->prepare("INSERT INTO shops3 (title,content) VALUES (?, ?)");
+        $statement->bind_param('ss', $_POST['title'], $_POST['article']);
+        $statement->execute();
         header("location:editshops.php");
-	
     }
 }
 

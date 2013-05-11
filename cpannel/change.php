@@ -81,17 +81,23 @@ if (document.location.protocol == 'file:') {
     
     <input type="text" name="title" style="width: 68%;text-align:right" value="<?php
 											$id=$_GET['id'];
-										        $result=$mysqli->query("SELECT *FROM villas WHERE id='$id'");
+											$statement=$mysqli->prepare("SELECT * FROM villas WHERE id=?");
+											$statement->bind_param('i', $id);
+											$statement->execute();
+											$result=$statement->get_result();
 											$row=$result->fetch_array();
 											echo $row['title'];
 										?>"> : العنوان 
     <br><br>
     <textarea  id="elm1" name="article" rows="15" cols="40" style="width: 75%">
 										<?php
-											 $id=$_GET['id'];
-											 $result=$mysqli->query("SELECT *FROM villas WHERE id='$id'");
-											 $row=$result->fetch_array();
-											 echo $row['content'];
+											$id=$_GET['id'];
+											$statement=$mysqli->prepare("SELECT * FROM villas WHERE id=?");
+											$statement->bind_param('i', $id);
+											$statement->execute();
+											$result=$statement->get_result();
+											$row=$result->fetch_array();
+											echo $row['content'];
 										?> 
     </textarea>
     <br>
@@ -126,7 +132,9 @@ if (document.location.protocol == 'file:') {
 
 if(isset($_POST['title'])&&isset($_POST['article']))
 {
-$mysqli->query("UPDATE villas SET title='$_POST[title]', content='$_POST[article]' WHERE id='$_GET[id]' ");
+$statement = $mysqli->prepare("UPDATE villas SET title=?, content=? WHERE id=? ");
+$statement->bind_param('ssi', $_POST['article'], $_POST['id'], $_GET['id']);
+$statement->execute();
 header("location:editvillas.php");
 }
 

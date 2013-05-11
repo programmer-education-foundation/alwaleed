@@ -119,7 +119,9 @@ if (document.location.protocol == 'file:') {
 <?php
 if(isset($_POST['article']))
 {
-$mysqli->query("UPDATE about SET content='$_POST[article]' WHERE id=0 ");
+$statement = $mysqli->prepare("UPDATE about SET content=? WHERE id=0 ");
+$statement->bind_param('s', $_POST['article']);
+$statement->execute();
 header("location:aboutus.php");
 }
 ?>

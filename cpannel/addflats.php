@@ -127,23 +127,26 @@ if(isset($_POST['title'])&& $_POST['title']!="" && isset($_POST['article']) && $
 {
     if($_POST['type']=="tmlek")
     {
-	$mysqli->query("INSERT INTO flats1 (title,content) VALUES ('$_POST[title]','$_POST[article]')");
-	header("location:editflats.php");
-	
+        $statement = $mysqli->prepare("INSERT INTO flats1 (title,content) VALUES (?, ?)");
+        $statement->bind_param('ss', $_POST['title'], $_POST['article']);
+        $statement->execute();
+        header("location:editflats.php");
     }
     
     if($_POST['type']=="new")
     {
-	$mysqli->query("INSERT INTO flats2 (title,content) VALUES ('$_POST[title]','$_POST[article]')");
-	header("location:editflats.php");
-	
+        $statement = $mysqli->prepare("INSERT INTO flats2 (title,content) VALUES (?, ?)");
+        $statement->bind_param('ss', $_POST['title'], $_POST['article']);
+        $statement->execute();
+        header("location:editflats.php");
     }
     
     if($_POST['type']=="old")
     {
-	$mysqli->query("INSERT INTO flats3 (title,content) VALUES ('$_POST[title]','$_POST[article]')");
-	header("location:editflats.php");
-	
+        $statement = $mysqli->prepare("INSERT INTO flats3 (title,content) VALUES (?, ?)");
+        $statement->bind_param('ss', $_POST['title'], $_POST['article']);
+        $statement->execute();
+        header("location:editflats.php");
     }
 }
 

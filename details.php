@@ -27,9 +27,12 @@
             {
                
                $a=$_GET['id'];
-             $result=$mysqli->query("SELECT *FROM lands WHERE id='$a'")or die($mysqli->error);
-             $row=$result->fetch_array();
-             echo $row['1'];
+               $statement = $mysqli->prepare("SELECT * FROM lands WHERE id=?");
+               $statement->bind_param('i', $a);
+               $statement->execute() or die($mysqli->error);
+               $result = $statement->get_result();
+               $row = $result->fetch_array();
+               echo $row['1'];
             }
             
             else
@@ -60,10 +63,13 @@
             {
                echo "<div id='content'>";
                $a=$_GET['id'];
-             $result=$mysqli->query("SELECT *FROM lands WHERE id='$a'")or die($mysqli->error);
-             $row=$result->fetch_array();
-             echo $row['2'];
-             echo "</div>";
+               $statement = $mysqli->prepare("SELECT * FROM lands WHERE id=?");
+               $statement->bind_param('i', $a);
+               $statement->execute() or die($mysqli->error);
+               $result = $statement->get_result();
+               $row=$result->fetch_array();
+               echo $row['2'];
+               echo "</div>";
             }
             
             else

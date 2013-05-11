@@ -113,7 +113,9 @@ if (document.location.protocol == 'file:') {
 <?php
 if(isset($_POST['title'])&&isset($_POST['article']))
 {
-$mysqli->query("INSERT INTO lands (title,content) VALUES ('$_POST[title]','$_POST[article]')");
+$statement = $mysqli->prepare("INSERT INTO lands (title,content) VALUES (?, ?)");
+$statement->bind_param('ss', $_POST['title'], $_POST['article']);
+$statement->execute();
 header("location:editlands.php");
 }
 ?>

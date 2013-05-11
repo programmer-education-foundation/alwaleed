@@ -19,7 +19,10 @@ include("include/connection.php");
     if($numRows<10 && $numRows!=0)
     {
         $a = $numRows-5;
-        $result = $mysqli->query("SELECT title, content FROM buildings ORDER by id ASC LIMIT $a ")or die($mysqli->error);
+        $statement = $mysqli->prepare("SELECT title, content FROM buildings ORDER by id ASC LIMIT ? ");
+        $statement->bind_param('i', $a);
+        $statement->execute() or die($mysqli->error);
+        $result = $statement->get_result();
         while( $row = $result->fetch_array())
        {
            echo "<div id='title'> <span class='t'>". $row['title']."</span></div><br/><br/>";
@@ -38,7 +41,10 @@ include("include/connection.php");
         
         for($i=0;$i<=4;$i++)
         {
-           $result = $mysqli->query("SELECT * FROM buildings  WHERE id='$start' ORDER by id DESC ")or die($mysqli->error);
+           $statement = $mysqli->prepare("SELECT * FROM buildings  WHERE id=? ORDER by id DESC ");
+           $statement->bind_param('i', $start);
+           $statement->execute() or die($mysqli->error);
+           $result = $statement->get_result();
            $row = $result->fetch_array();
            echo "<div id='title'> <span class='t'>". $row['title']."</span></div><br/><br/>";
            echo "<div id='content'>";

@@ -119,7 +119,9 @@ if (document.location.protocol == 'file:') {
 
 if(isset($_GET['id']))
 {
-$mysqli->query("DELETE FROM lands WHERE id='$_GET[id]' ");
+$statement = $mysqli->prepare("DELETE FROM lands WHERE id=?");
+$statement->bind_param('i', $_GET['id']);
+$statement->execute();
 header("location:editlands.php");
 
 }

@@ -5,7 +5,9 @@
 if(isset($_GET['id']) && $_GET['status']==1)
 {
 
-$mysqli->query("DELETE FROM shops1 WHERE id='$_GET[id]' ");
+$statement = $mysqli->prepare("DELETE FROM shops1 WHERE id=? ");
+$statement->bind_param('i', $_GET['id']);
+$statement->execute();
 
 header("location:editshops.php");
 
@@ -19,7 +21,9 @@ header("location:editshops.php");
 if(isset($_GET['id']) && $_GET['status']==2)
 {
 
-$mysqli->query("DELETE FROM shops2 WHERE id='$_GET[id]' ");
+$statement = $mysqli->prepare("DELETE FROM shops2 WHERE id=? ");
+$statement->bind_param('i', $_GET['id']);
+$statement->execute();
 
 header("location:editshops.php");
 
@@ -32,7 +36,9 @@ header("location:editshops.php");
 if(isset($_GET['id']) && $_GET['status']==3)
 {
 
-$mysqli->query("DELETE FROM shops3 WHERE id='$_GET[id]' ");
+$statement = $mysqli->prepare("DELETE FROM shops3 WHERE id=? ");
+$statement->bind_param('i', $_GET['id']);
+$statement->execute();
 
 header("location:editshops.php");
 

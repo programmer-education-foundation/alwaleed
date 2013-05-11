@@ -86,7 +86,10 @@ if (document.location.protocol == 'file:') {
                                                                                                 if($_GET['status']==1)
                                                                                                 {
                                                                                                     $id=$_GET['id'];
-                                                                                                    $result=$mysqli->query("SELECT *FROM flats1 WHERE id='$id'");
+                                                                                                    $statement=$mysqli->prepare("SELECT * FROM flats1 WHERE id=?");
+                                                                                                    $statement->bind_param('i', $id);
+                                                                                                    $statement->execute();
+                                                                                                    $result=$statement->get_result();
                                                                                                     $row=$result->fetch_array();
                                                                                                     echo $row['title'];
                                                                                                 }
@@ -94,7 +97,10 @@ if (document.location.protocol == 'file:') {
                                                                                                 if($_GET['status']==2)
                                                                                                 {
                                                                                                     $id=$_GET['id'];
-                                                                                                    $result=$mysqli->query("SELECT *FROM flats2 WHERE id='$id'");
+                                                                                                    $statement=$mysqli->prepare("SELECT * FROM flats2 WHERE id=?");
+                                                                                                    $statement->bind_param('i', $id);
+                                                                                                    $statement->execute();
+                                                                                                    $result=$statement->get_result();
                                                                                                     $row=$result->fetch_array();
                                                                                                     echo $row['title'];
                                                                                                 }
@@ -102,7 +108,10 @@ if (document.location.protocol == 'file:') {
                                                                                                 if($_GET['status']==3)
                                                                                                 {
                                                                                                     $id=$_GET['id'];
-                                                                                                    $result=$mysqli->query("SELECT *FROM flats3 WHERE id='$id'");
+                                                                                                    $statement=$mysqli->prepare("SELECT * FROM flats3 WHERE id=?");
+                                                                                                    $statement->bind_param('i', $id);
+                                                                                                    $statement->execute();
+                                                                                                    $result=$statement->get_result();
                                                                                                     $row=$result->fetch_array();
                                                                                                     echo $row['title'];
                                                                                                 }
@@ -120,7 +129,10 @@ if (document.location.protocol == 'file:') {
                                                                                                 if($_GET['status']==1)
                                                                                                 {
                                                                                                     $id=$_GET['id'];
-                                                                                                    $result=$mysqli->query("SELECT *FROM flats1 WHERE id='$id'");
+                                                                                                    $statement=$mysqli->prepare("SELECT * FROM flats1 WHERE id=?");
+                                                                                                    $statement->bind_param('i', $id);
+                                                                                                    $statement->execute();
+                                                                                                    $result=$statement->get_result();
                                                                                                     $row=$result->fetch_array();
                                                                                                     echo $row['content'];
                                                                                                 }
@@ -128,7 +140,10 @@ if (document.location.protocol == 'file:') {
                                                                                                 if($_GET['status']==2)
                                                                                                 {
                                                                                                     $id=$_GET['id'];
-                                                                                                    $result=$mysqli->query("SELECT *FROM flats2 WHERE id='$id'");
+                                                                                                    $statement=$mysqli->prepare("SELECT * FROM flats2 WHERE id=?");
+                                                                                                    $statement->bind_param('i', $id);
+                                                                                                    $statement->execute();
+                                                                                                    $result=$statement->get_result();
                                                                                                     $row=$result->fetch_array();
                                                                                                     echo $row['content'];
                                                                                                 }
@@ -136,7 +151,10 @@ if (document.location.protocol == 'file:') {
                                                                                                 if($_GET['status']==3)
                                                                                                 {
                                                                                                     $id=$_GET['id'];
-                                                                                                    $result=$mysqli->query("SELECT *FROM flats3 WHERE id='$id'");
+                                                                                                    $statement=$mysqli->prepare("SELECT * FROM flats3 WHERE id=?");
+                                                                                                    $statement->bind_param('i', $id);
+                                                                                                    $statement->execute();
+                                                                                                    $result=$statement->get_result();
                                                                                                     $row=$result->fetch_array();
                                                                                                     echo $row['content'];
                                                                                                 }
@@ -178,20 +196,26 @@ if (document.location.protocol == 'file:') {
     {
         if($_GET['status']==1)
             {
-               $mysqli->query("UPDATE flats1 SET title='$_POST[title]', content='$_POST[article]' WHERE id='$_GET[id]' ");
+               $statement = $mysqli->prepare("UPDATE flats1 SET title=?, content=? WHERE id=?");
+               $statement->bind_param('ssi', $_POST['title'], $_POST['article'], $_GET['id']);
+               $statement->execute();
                header("location:editflats.php");
             }
             
          if($_GET['status']==2)
             {
-                $mysqli->query("UPDATE flats2 SET title='$_POST[title]', content='$_POST[article]' WHERE id='$_GET[id]' ");
-                header("location:editflats.php");
+               $statement = $mysqli->prepare("UPDATE flats2 SET title=?, content=? WHERE id=?");
+               $statement->bind_param('ssi', $_POST['title'], $_POST['article'], $_GET['id']);
+               $statement->execute();
+               header("location:editflats.php");
             }
             
          if($_GET['status']==3)
             {
-                $mysqli->query("UPDATE flats3 SET title='$_POST[title]', content='$_POST[article]' WHERE id='$_GET[id]' ");
-                header("location:editflats.php");
+               $statement = $mysqli->prepare("UPDATE flats3 SET title=?, content=? WHERE id=?");
+               $statement->bind_param('ssi', $_POST['title'], $_POST['article'], $_GET['id']);
+               $statement->execute();
+               header("location:editflats.php");
             }
     }
 ?>
