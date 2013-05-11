@@ -63,11 +63,11 @@
             
                <?php
          
-         $result=mysql_query("SELECT * FROM lands ORDER by id DESC LIMIT 5")or die(mysql_error());
+         $result=$mysqli->query("SELECT * FROM lands ORDER by id DESC LIMIT 5")or die($mysqli->error);
          
                    
                       
-		      while($row=mysql_fetch_array($result))
+		      while($row=$result->fetch_array())
                       {
                         
                         echo "<div id='title'> <span class='t'>". $row['1']."</span></div><br/><br/>";
@@ -91,8 +91,8 @@
                     
         </div>
      <?php
-     $result1 = mysql_query("SELECT title, content FROM lands")or die(mysql_error());
-     $numRows = mysql_num_rows($result1);
+     $result1 = $mysqli->query("SELECT title, content FROM lands")or die($mysqli->error);
+     $numRows = $result1->num_rows;
            if($numRows>5)
            {
             echo " <form id='form' name='form'>";

@@ -124,21 +124,21 @@ if(isset($_POST['title'])&& $_POST['title']!="" && isset($_POST['article']) && $
 {
     if($_POST['type']=="tmlek")
     {
-	mysql_query("INSERT INTO shops1 (title,content) VALUES ('$_POST[title]','$_POST[article]')");
+	$mysqli->query("INSERT INTO shops1 (title,content) VALUES ('$_POST[title]','$_POST[article]')");
         header("location:editshops.php");
 
     }
     
     if($_POST['type']=="new")
     {
-	mysql_query("INSERT INTO  shops2 (title,content) VALUES ('$_POST[title]','$_POST[article]')");
+	$mysqli->query("INSERT INTO  shops2 (title,content) VALUES ('$_POST[title]','$_POST[article]')");
         header("location:editshops.php");
 	
     }
     
     if($_POST['type']=="old")
     {
-	mysql_query("INSERT INTO  shops3 (title,content) VALUES ('$_POST[title]','$_POST[article]')");
+	$mysqli->query("INSERT INTO  shops3 (title,content) VALUES ('$_POST[title]','$_POST[article]')");
         header("location:editshops.php");
 	
     }

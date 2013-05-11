@@ -112,7 +112,7 @@ if (document.location.protocol == 'file:') {
 <?php
 if(isset($_POST['title'])&&isset($_POST['article']))
 {
-mysql_query("INSERT INTO villas (title,content) VALUES ('$_POST[title]','$_POST[article]')");
+$mysqli->query("INSERT INTO villas (title,content) VALUES ('$_POST[title]','$_POST[article]')");
 header("location:editvillas.php");
 }
 ?>

@@ -60,7 +60,7 @@ if ((($_FILES["file"]["type"] == "image/gif")
      
       $link = "C:/xampp/htdocs/alwaleed/imgupload/".$_FILES["file"]["name"];
       
-      mysql_query("UPDATE slider SET url='$link' WHERE id=1 ");
+      $mysqli->query("UPDATE slider SET url='$link' WHERE id=1 ");
       echo "<span style='text-align:center; margin-right:20px;'>تم رفع الصورة بنجاح</span>";
       }
     }
@@ -119,7 +119,7 @@ if ((($_FILES["file"]["type"] == "image/gif")
      
       $link = "C:/xampp/htdocs/alwaleed/imgupload/".$_FILES["file"]["name"];
       
-      mysql_query("UPDATE slider SET url='$link' WHERE id=2 ");
+      $mysqli->query("UPDATE slider SET url='$link' WHERE id=2 ");
       echo "<span style='text-align:center; margin-right:20px;'>تم رفع الصورة بنجاح</span>";
       }
     }
@@ -173,7 +173,7 @@ if ((($_FILES["file"]["type"] == "image/gif")
      
       $link = "C:/xampp/htdocs/alwaleed/imgupload/".$_FILES["file"]["name"];
       
-      mysql_query("UPDATE slider SET url='$link' WHERE id=2 ");
+      $mysqli->query("UPDATE slider SET url='$link' WHERE id=2 ");
       echo "<span style='text-align:center; margin-right:20px;'>تم رفع الصورة بنجاح</span>";
       }
     }

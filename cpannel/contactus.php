@@ -86,8 +86,8 @@ if (document.location.protocol == 'file:') {
     
     ;
     
-    $result=mysql_query("SELECT * FROM opinion") or die(mysql_error());
-    while($row=mysql_fetch_array($result))
+    $result=$mysqli->query("SELECT * FROM opinion") or die($mysqli->error);
+    while($row=$result->fetch_array())
     {
      echo"<tr><td style='text-align:right'>";
       

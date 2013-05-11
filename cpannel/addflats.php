@@ -127,21 +127,21 @@ if(isset($_POST['title'])&& $_POST['title']!="" && isset($_POST['article']) && $
 {
     if($_POST['type']=="tmlek")
     {
-	mysql_query("INSERT INTO flats1 (title,content) VALUES ('$_POST[title]','$_POST[article]')");
+	$mysqli->query("INSERT INTO flats1 (title,content) VALUES ('$_POST[title]','$_POST[article]')");
 	header("location:editflats.php");
 	
     }
     
     if($_POST['type']=="new")
     {
-	mysql_query("INSERT INTO flats2 (title,content) VALUES ('$_POST[title]','$_POST[article]')");
+	$mysqli->query("INSERT INTO flats2 (title,content) VALUES ('$_POST[title]','$_POST[article]')");
 	header("location:editflats.php");
 	
     }
     
     if($_POST['type']=="old")
     {
-	mysql_query("INSERT INTO flats3 (title,content) VALUES ('$_POST[title]','$_POST[article]')");
+	$mysqli->query("INSERT INTO flats3 (title,content) VALUES ('$_POST[title]','$_POST[article]')");
 	header("location:editflats.php");
 	
     }

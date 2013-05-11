@@ -27,8 +27,8 @@
             {
                
                $a=$_GET['id'];
-             $result=mysql_query("SELECT *FROM lands WHERE id='$a'")or die(mysql_error());
-             $row=mysql_fetch_array($result);
+             $result=$mysqli->query("SELECT *FROM lands WHERE id='$a'")or die($mysqli->error);
+             $row=$result->fetch_array();
              echo $row['1'];
             }
             
@@ -60,8 +60,8 @@
             {
                echo "<div id='content'>";
                $a=$_GET['id'];
-             $result=mysql_query("SELECT *FROM lands WHERE id='$a'")or die(mysql_error());
-             $row=mysql_fetch_array($result);
+             $result=$mysqli->query("SELECT *FROM lands WHERE id='$a'")or die($mysqli->error);
+             $row=$result->fetch_array();
              echo $row['2'];
              echo "</div>";
             }

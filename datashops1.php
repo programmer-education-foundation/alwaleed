@@ -13,14 +13,14 @@
 include("include/connection.php");
 
   
-    $result1 = mysql_query("SELECT title, content FROM shops1")or die(mysql_error());
-    $numRows = mysql_num_rows($result1);
+    $result1 = $mysqli->query("SELECT title, content FROM shops1")or die($mysqli->error);
+    $numRows = $result1->num_rows;
     
     if($numRows<10 && $numRows!=0)
     {
         $a = $numRows-5;
-        $result = mysql_query("SELECT title, content FROM shops1 ORDER by id ASC LIMIT $a ")or die(mysql_error());
-        while( $row = mysql_fetch_array($result))
+        $result = $mysqli->query("SELECT title, content FROM shops1 ORDER by id ASC LIMIT $a ")or die($mysqli->error);
+        while( $row = $result->fetch_array())
        {
            echo "<div id='title'> <span class='t'>". $row['title']."</span></div><br/><br/>";
            echo "<div id='content'>";
@@ -38,8 +38,8 @@ include("include/connection.php");
         
         for($i=0;$i<=4;$i++)
         {
-           $result = mysql_query("SELECT * FROM shops1  WHERE id='$start' ORDER by id DESC ")or die(mysql_error());
-           $row = mysql_fetch_array($result);
+           $result = $mysqli->query("SELECT * FROM shops1  WHERE id='$start' ORDER by id DESC ")or die($mysqli->error);
+           $row = $result->fetch_array();
            echo "<div id='title'> <span class='t'>". $row['title']."</span></div><br/><br/>";
            echo "<div id='content'>";
            echo substr($row['content'], 0, 450);

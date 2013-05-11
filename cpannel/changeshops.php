@@ -86,24 +86,24 @@ if (document.location.protocol == 'file:') {
                                                                                                 if($_GET['status']==1)
                                                                                                 {
                                                                                                     $id=$_GET['id'];
-                                                                                                    $result=mysql_query("SELECT *FROM shops1 WHERE id='$id'");
-                                                                                                    $row=mysql_fetch_array($result);
+                                                                                                    $result=$mysqli->query("SELECT *FROM shops1 WHERE id='$id'");
+                                                                                                    $row=$result->fetch_array();
                                                                                                     echo $row['title'];
                                                                                                 }
                                                                                                 
                                                                                                 if($_GET['status']==2)
                                                                                                 {
                                                                                                     $id=$_GET['id'];
-                                                                                                    $result=mysql_query("SELECT *FROM shops2 WHERE id='$id'");
-                                                                                                    $row=mysql_fetch_array($result);
+                                                                                                    $result=$mysqli->query("SELECT *FROM shops2 WHERE id='$id'");
+                                                                                                    $row=$result->fetch_array();
                                                                                                     echo $row['title'];
                                                                                                 }
                                                                                                 
                                                                                                 if($_GET['status']==3)
                                                                                                 {
                                                                                                     $id=$_GET['id'];
-                                                                                                    $result=mysql_query("SELECT *FROM shops3 WHERE id='$id'");
-                                                                                                    $row=mysql_fetch_array($result);
+                                                                                                    $result=$mysqli->query("SELECT *FROM shops3 WHERE id='$id'");
+                                                                                                    $row=$result->fetch_array();
                                                                                                     echo $row['title'];
                                                                                                 }
                                                                                             }
@@ -120,24 +120,24 @@ if (document.location.protocol == 'file:') {
                                                                                                 if($_GET['status']==1)
                                                                                                 {
                                                                                                     $id=$_GET['id'];
-                                                                                                    $result=mysql_query("SELECT *FROM shops1 WHERE id='$id'");
-                                                                                                    $row=mysql_fetch_array($result);
+                                                                                                    $result=$mysqli->query("SELECT *FROM shops1 WHERE id='$id'");
+                                                                                                    $row=$result->fetch_array();
                                                                                                     echo $row['content'];
                                                                                                 }
                                                                                                 
                                                                                                 if($_GET['status']==2)
                                                                                                 {
                                                                                                     $id=$_GET['id'];
-                                                                                                    $result=mysql_query("SELECT *FROM shops2 WHERE id='$id'");
-                                                                                                    $row=mysql_fetch_array($result);
+                                                                                                    $result=$mysqli->query("SELECT *FROM shops2 WHERE id='$id'");
+                                                                                                    $row=$result->fetch_array();
                                                                                                     echo $row['content'];
                                                                                                 }
                                                                                                 
                                                                                                 if($_GET['status']==3)
                                                                                                 {
                                                                                                     $id=$_GET['id'];
-                                                                                                    $result=mysql_query("SELECT *FROM shops3 WHERE id='$id'");
-                                                                                                    $row=mysql_fetch_array($result);
+                                                                                                    $result=$mysqli->query("SELECT *FROM shops3 WHERE id='$id'");
+                                                                                                    $row=$result->fetch_array();
                                                                                                     echo $row['content'];
                                                                                                 }
                                                                                             }
@@ -178,19 +178,19 @@ if (document.location.protocol == 'file:') {
     {
         if($_GET['status']==1)
             {
-               mysql_query("UPDATE shops1 SET title='$_POST[title]', content='$_POST[article]' WHERE id='$_GET[id]' ");
+               $mysqli->query("UPDATE shops1 SET title='$_POST[title]', content='$_POST[article]' WHERE id='$_GET[id]' ");
                header("location:editshops.php");
             }
             
          if($_GET['status']==2)
             {
-                mysql_query("UPDATE shops2 SET title='$_POST[title]', content='$_POST[article]' WHERE id='$_GET[id]' ");
+                $mysqli->query("UPDATE shops2 SET title='$_POST[title]', content='$_POST[article]' WHERE id='$_GET[id]' ");
                 header("location:editshops.php");
             }
             
          if($_GET['status']==3)
             {
-                mysql_query("UPDATE shops3 SET title='$_POST[title]', content='$_POST[article]' WHERE id='$_GET[id]' ");
+                $mysqli->query("UPDATE shops3 SET title='$_POST[title]', content='$_POST[article]' WHERE id='$_GET[id]' ");
                 header("location:editshops.php");
             }
     }

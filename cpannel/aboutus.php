@@ -83,8 +83,8 @@ if (document.location.protocol == 'file:') {
 
                          <textarea  id="elm1" name="article" rows="15" cols="40" style="width: 75%">
                                                                                <?php
-											 $result=mysql_query("SELECT *FROM about WHERE id=0");
-											 $row=mysql_fetch_array($result);
+											 $result=$mysqli->query("SELECT *FROM about WHERE id=0");
+											 $row=$result->fetch_array();
 											 echo $row['content'];
 										?> 
                          </textarea>
@@ -119,7 +119,7 @@ if (document.location.protocol == 'file:') {
 <?php
 if(isset($_POST['article']))
 {
-mysql_query("UPDATE about SET content='$_POST[article]' WHERE id=0 ");
+$mysqli->query("UPDATE about SET content='$_POST[article]' WHERE id=0 ");
 header("location:aboutus.php");
 }
 ?>

@@ -95,8 +95,8 @@ if (document.location.protocol == 'file:') {
     
     
     
-    $result=mysql_query("SELECT * FROM villas ORDER by id DESC") or die(mysql_error());
-    while($row=mysql_fetch_array($result))
+    $result=$mysqli->query("SELECT * FROM villas ORDER by id DESC") or die($mysqli->error);
+    while($row=$result->fetch_array())
     {
      echo"<tr>";
      echo "<td>"."<a href='editvillas.php?id=".$row['id']."'><img src='images/delete.png'>"."</a>"."</td>"; 
@@ -119,7 +119,7 @@ if (document.location.protocol == 'file:') {
 
 if(isset($_GET['id']))
 {
-mysql_query("DELETE FROM villas WHERE id='$_GET[id]' ");
+$mysqli->query("DELETE FROM villas WHERE id='$_GET[id]' ");
 header("location:editvillas.php");
 
 }

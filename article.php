@@ -62,11 +62,11 @@
             
                <?php
          
-         $result=mysql_query("SELECT *FROM lands ORDER by id DESC LIMIT 5")or die(mysql_error());
+         $result=$mysqli->query("SELECT *FROM lands ORDER by id DESC LIMIT 5")or die($mysqli->error);
          
                    
                       
-		      while($row=mysql_fetch_array($result))
+		      while($row=$result->fetch_array())
                       {
                         
                         echo "<div id='title'> <span class='t'>". $row['1']."</span></div><br/><br/>";

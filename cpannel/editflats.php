@@ -95,8 +95,8 @@ if (document.location.protocol == 'file:') {
     
     
     
-    $result=mysql_query("SELECT * FROM flats1 ORDER by id DESC") or die(mysql_error());
-    while($row=mysql_fetch_array($result))
+    $result=$mysqli->query("SELECT * FROM flats1 ORDER by id DESC") or die($mysqli->error);
+    while($row=$result->fetch_array())
     {
      echo"<tr>";
      echo "<td>"."<a href='deleteflats.php?id=".$row['id']."&status=1'><img src='images/delete.png'>"."</a>"."</td>"; 
@@ -127,8 +127,8 @@ if (document.location.protocol == 'file:') {
     
     
     
-    $result=mysql_query("SELECT * FROM flats2 ORDER by id DESC") or die(mysql_error());
-    while($row=mysql_fetch_array($result))
+    $result=$mysqli->query("SELECT * FROM flats2 ORDER by id DESC") or die($mysqli->error);
+    while($row=$result->fetch_array())
     {
      echo"<tr>";
      echo "<td>"."<a href='deleteflats.php?id=".$row['id']."&status=2'><img src='images/delete.png'>"."</a>"."</td>"; 
@@ -159,8 +159,8 @@ if (document.location.protocol == 'file:') {
     
     
     
-    $result=mysql_query("SELECT * FROM flats3 ORDER by id DESC") or die(mysql_error());
-    while($row=mysql_fetch_array($result))
+    $result=$mysqli->query("SELECT * FROM flats3 ORDER by id DESC") or die($mysqli->error);
+    while($row=$result->fetch_array())
     {
      echo"<tr>";
      echo "<td>"."<a href='deleteflats.php?id=".$row['id']."&status=3'><img src='images/delete.png'>"."</a>"."</td>"; 

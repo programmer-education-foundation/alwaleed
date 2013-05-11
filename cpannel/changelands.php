@@ -81,16 +81,16 @@ if (document.location.protocol == 'file:') {
     
     <input type="text" name="title" style="width: 68%;text-align:right" value="<?php
 											$id=$_GET['id'];
-										        $result=mysql_query("SELECT *FROM lands WHERE id='$id'");
-											$row=mysql_fetch_array($result);
+										        $result=$mysqli->query("SELECT *FROM lands WHERE id='$id'");
+											$row=$result->fetch_array();
 											echo $row['title'];
 										?>"> : العنوان 
     <br><br>
     <textarea  id="elm1" name="article" rows="15" cols="40" style="width: 75%">
 										<?php
 											 $id=$_GET['id'];
-											 $result=mysql_query("SELECT *FROM lands WHERE id='$id'");
-											 $row=mysql_fetch_array($result);
+											 $result=$mysqli->query("SELECT *FROM lands WHERE id='$id'");
+											 $row=$result->fetch_array();
 											 echo $row['content'];
 										?> 
     </textarea>
@@ -126,7 +126,7 @@ if (document.location.protocol == 'file:') {
 
 if(isset($_POST['title'])&&isset($_POST['article']))
 {
-mysql_query("UPDATE lands SET title='$_POST[title]', content='$_POST[article]' WHERE id='$_GET[id]' ");
+$mysqli->query("UPDATE lands SET title='$_POST[title]', content='$_POST[article]' WHERE id='$_GET[id]' ");
 header("location:editlands.php");
 }
 
